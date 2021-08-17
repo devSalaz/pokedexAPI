@@ -1,0 +1,247 @@
+.accordion-section {
+  min-height: 90vh;
+  width: 100%;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+}
+
+.accordion-container {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  pointer-events: all;
+}
+
+.accordion-image {
+  width: 48%;
+  filter: drop-shadow(0 0 0.15rem #4a00e0);
+}
+
+.accordion-div {
+  max-width: 42%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4% 5%;
+  border-radius: 20px;
+  pointer-events: all;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.accordion-tittle {
+  padding: 15px 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #10192a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-tittle span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.monocle-emoji {
+  width: 1.47rem;
+}
+
+.accordion-subtittle {
+  padding: 10px 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 140%;
+  color: #131827;
+}
+
+.accordion-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+  margin-top: 15px;
+}
+
+.accordion-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0% 6px;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.accordion-top {
+  width: 100%;
+  padding: 5% 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: all;
+}
+
+.accordion-question {
+  width: 100%;
+  color: #feffff;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  pointer-events: all;
+  font-size: 0.93rem;
+  color: #585d6a;
+}
+
+.accordion-answer {
+  width: 100%;
+  padding: 0px 2% 10px 2%;
+  text-align: left;
+  text-justify: auto;
+  pointer-events: all;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.93rem;
+  line-height: 140%;
+  color: #141826;
+}
+
+.accordion-answer h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.93rem;
+  color: #141826;
+}
+
+.accordion-answer a {
+  color: #13182a;
+
+  font-weight: 600;
+}
+
+.accordion-answer .download-button {
+  padding: 8px 18px;
+  border: 2px solid #e2e7f1;
+  border-radius: 16px;
+  display: flex;
+  width: fit-content;
+  margin-top: 7px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #141826;
+  background-color: transparent;
+  text-decoration: none;
+  transition: background-color 450ms;
+}
+
+.accordion-answer .download-button:hover {
+  background-color: #e2e7f1;
+}
+
+.accordion-icon {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.accordion-icon1 {
+  width: 15px;
+  height: 3px;
+  background-color: #717586;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  transition: background-color 450ms;
+  opacity: 0.9;
+}
+
+.accordion-icon2 {
+  width: 15px;
+  height: 3px;
+  background-color: #717586;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 5px;
+  transform: rotate(90deg);
+  transition: transform 450ms, background-color 450ms;
+  opacity: 0.9;
+}
+
+.accordion-icon1.selected {
+  background-color: red;
+}
+
+.accordion-icon2.selected {
+  transform: rotate(0deg);
+  background-color: red;
+}
+
+.accordion-line {
+  width: 100%;
+  height: 1px;
+  background-color: #dfe1ec;
+}
+
+@media only screen and (max-width: 1600px) {
+  .accordion-section {
+    min-height: 100vh;
+  }
+
+  .accordion-div {
+    padding: 3% 4%;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  .accordion-container {
+    flex-direction: column-reverse;
+  }
+  .accordion-div {
+    max-width: 60%;
+    padding: 4% 5%;
+  }
+
+  .accordion-image {
+    margin-top: 70px;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .accordion-section {
+    padding: 5% 3%;
+  }
+
+  .accordion-div {
+    max-width: 85%;
+  }
+
+  .accordion-image {
+    width: 100%;
+  }
+}

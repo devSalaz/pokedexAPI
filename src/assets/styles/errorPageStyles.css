@@ -1,0 +1,116 @@
+.errorPage-container {
+  width: 100%;
+  height: 88vh;
+  position: relative;
+
+  background-color: #ffffff;
+  background-position: center;
+  background-blend-mode: difference;
+  opacity: 1;
+  background-image: radial-gradient(circle at center center, #45d9f7, #ffffff),
+    repeating-radial-gradient(
+      circle at center center,
+      #45d9f7,
+      #45d9f7,
+      40px,
+      transparent 80px,
+      transparent 40px
+    );
+  background-blend-mode: multiply;
+  top: 0;
+  left: 0;
+  animation: animBGCircle 6000ms ease infinite;
+}
+
+@keyframes animBGCircle {
+  0% {
+    background-size: 100%;
+  }
+
+  50% {
+    background-size: 600%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.loader-div {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.loader-div.ended {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-div .loader-content h3 {
+  color: #5cd5f6;
+  font-size: 1.9rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-div .loader-content h3 span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-div .loader-content h3 span img {
+  width: 30px;
+}
+
+.loader-div .loader-content .bar-loading-error {
+  margin-top: 10px;
+  border-radius: 20px;
+  height: 12px;
+  width: 100%;
+  background-color: #ffffff;
+  border: solid 3px #5cd5f6;
+  position: relative;
+}
+
+.loader-div .loader-content .bar-loading-error .bar-error {
+  background-color: #5cd5f6;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  transform-origin: top left;
+  transform: scaleX(0.001);
+  transition: transform 500ms;
+  will-change: transform;
+}
+
+@media only screen and (max-width: 1026px) {
+  .loader-div .loader-content h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .loader-div .loader-content h3 {
+    font-size: 2.1rem;
+  }
+
+  .loader-div .loader-content h3 span img {
+    width: 30px;
+  }
+}

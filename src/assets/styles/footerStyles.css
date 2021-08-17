@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+footer {
+  background: #ff392e;
+  min-height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5% 10% 5%;
+}
+
+.footer-container {
+  color: white;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.follow-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  margin-left: -119px;
+}
+
+footer .social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+footer .span-follow {
+  position: absolute;
+}
+
+.span-follow::before {
+  content: "Artstation";
+  color: #ffffff;
+  transition: color 400ms;
+  animation: beforeTyping 10s infinite;
+}
+
+.span-follow.artstation::before {
+  color: #3b5998;
+}
+.span-follow.sketchfab::before {
+  color: #1caad9;
+}
+.span-follow.youtube::before {
+  color: #282828;
+}
+.span-follow.snapchat::before {
+  color: #ffdd05;
+}
+
+@keyframes beforeTyping {
+  0% {
+    content: "Artstation";
+  }
+  24.9% {
+    content: "Artstation";
+  }
+  25% {
+    content: "Sketchfab";
+  }
+  49.9% {
+    content: "Sketchfab";
+  }
+  50% {
+    content: "Youtube";
+  }
+  74.9% {
+    content: "Youtube";
+  }
+  75% {
+    content: "Snapchat";
+  }
+  99.9% {
+    content: "Snapchat";
+  }
+}
+footer .span-follow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0%);
+  background: #ff392e;
+  border-left: 2px solid #ffffff;
+  border-color: #ffffff;
+  transition: border-color 400ms;
+  animation: afterTyping 2.5s steps(9) infinite;
+}
+footer .span-follow.artstation::after {
+  border-color: #3b5998;
+}
+footer .span-follow.sketchfab::after {
+  border-color: #1caad9;
+}
+footer .span-follow.youtube::after {
+  border-color: #282828;
+}
+footer .span-follow.snapchat::after {
+  border-color: #ffdd05;
+}
+
+@keyframes afterTyping {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(101%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+footer .social-container .social-icon {
+  background: white;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: all 400ms;
+  will-change: transform;
+}
+
+.icon-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.icon-shadow::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  transform: skew(-45deg) translateX(100%);
+  transition: transform 500ms ease-out;
+  will-change: transform;
+  background: linear-gradient(90deg, transparent, #fff);
+}
+
+footer .social-container .social-icon:hover .icon-shadow::before {
+  transform: translateX(-100%);
+}
+
+footer .social-container .social-icon::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 400ms;
+  will-change: opacity;
+}
+
+footer .social-container .social-icon:hover {
+  transform: translateY(-10px);
+}
+
+footer .social-container .social-icon:hover .footer-icon {
+  color: #ff392e;
+  transition: color 400ms;
+  will-change: color;
+}
+
+footer .social-container .social-icon:hover:before {
+  transform: skew(0deg) translateX(-100%);
+}
+
+footer .social-container .social-icon:hover:after {
+  opacity: 1;
+}
+
+.footer-icon.artstation {
+  color: #3b5998;
+}
+
+.footer-icon.sketchfab {
+  color: #1caad9;
+}
+
+.footer-icon.youtube {
+  color: #ff0000;
+}
+
+.footer-icon.snapchat {
+  color: #ffdd05;
+}
+
+.copyright-text {
+  position: relative;
+  bottom: -1rem;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 767px) {
+  footer {
+    padding: 65px 10% 70px;
+  }
+
+  footer .social-container {
+    padding: 1rem 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  footer .social-container .social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+
+  .follow-text {
+    font-size: 1.6rem;
+  }
+
+  .copyright-text {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,248 @@
+.pokemonList {
+  width: 100%;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.pokemonsContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  padding: 5% 0%;
+}
+
+/* Pokemons References */
+
+.digglet-container {
+  position: absolute;
+  right: 0px;
+  width: 70px;
+  height: 70px;
+  background-color: yellow;
+  transform: translateY(-1200%);
+  opacity: 0;
+}
+
+.ditto-container {
+  position: absolute;
+  left: -8%;
+  width: 200px;
+  height: 200px;
+  background: blue;
+  opacity: 0;
+}
+
+.loading-container {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-ball {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: solid 7px #ff392e;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pokeball-spin infinite 10s linear;
+}
+
+.pokemon-ball .ball {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: solid 3px #ff392e;
+  border-radius: 50%;
+  position: relative;
+  z-index: 5;
+}
+
+.pokemon-ball .line-ball {
+  position: absolute;
+  height: 3px;
+  background-color: #ff392e;
+  width: 100%;
+}
+
+@keyframes pokeball-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container img {
+  width: 40px;
+}
+
+.pokedex-title {
+  background: #ff416c;
+  background: -webkit-linear-gradient(
+    to top right,
+    #ff416c,
+    #ff4b2b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top right, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 20px 0%;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container .pokeball-title {
+  border: solid 5px #383b4f;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title-container .pokeball-title .red-bg {
+  width: 100%;
+  height: 50%;
+  background: #ff392e;
+  position: relative;
+  z-index: -1;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.title-container .pokeball-title .white-bg {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  z-index: -1;
+}
+
+.title-container .pokeball-title .line {
+  width: 100%;
+  height: 2px;
+  background: #383b4f;
+  position: absolute;
+  z-index: -1;
+}
+
+.title-container .pokeball-title .ball {
+  width: 12px;
+  height: 12px;
+  background: white;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  border: solid 2px #383b4f;
+}
+
+.pokemonsCardsContainer {
+  width: 100%;
+  display: flex;
+  padding: 5% 0 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.buttons-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-button,
+.next-button {
+  height: 45px;
+  width: 45px;
+  margin: 20px 35px 20px;
+  background-color: #ffffff;
+  color: #ff392e;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 400ms;
+  will-change: transform;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-button.disabled,
+.next-button.disabled {
+  background: #e0e0e0;
+  pointer-events: none;
+}
+
+.prev-button .icon-prev polyline,
+.next-button .icon-next polyline {
+  stroke: #ff392e;
+  transition: stroke 400ms;
+}
+
+.prev-button.disabled .icon-prev polyline,
+.next-button.disabled .icon-next polyline {
+  stroke: #ffffff;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  transform: scale(1.075);
+}
+
+@media only screen and (max-width: 1025px) {
+  .pokemonList {
+    padding: 8% 10%;
+  }
+
+  .pokemonsCardsContainer {
+    padding: 8% 0 0;
+  }
+
+  .ditto-container {
+    left: -3%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pokemonsCardsContainer {
+    padding: 10% 0 0;
+  }
+
+  .ditto-container {
+    left: 3%;
+    width: 150px;
+    height: 150px;
+  }
+}
