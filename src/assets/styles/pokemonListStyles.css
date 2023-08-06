@@ -98,11 +98,14 @@
 
 .pokedex-title {
   background: #ff416c;
-  background: -webkit-linear-gradient(
-    to top right,
-    #ff416c,
-    #ff4b2b
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#ff416c),
+    to(#ff4b2b)
+  );
+  background: -o-linear-gradient(bottom left, #ff416c, #ff4b2b);
   background: linear-gradient(to top right, #ff416c, #ff4b2b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -114,6 +117,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  display: inline-block;
 }
 
 .title-container .pokeball-title {

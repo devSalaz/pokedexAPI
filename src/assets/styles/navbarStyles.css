@@ -124,6 +124,7 @@ nav {
   justify-content: start;
   align-items: center;
   text-decoration: none;
+  pointer-events: none;
 }
 
 .menu-links ul li a span {
@@ -136,6 +137,10 @@ nav {
 
 .menu-links.change ul li {
   opacity: 1;
+  pointer-events: all;
+}
+.menu-links.change ul li a {
+  pointer-events: all;
 }
 
 @media (max-width: 1024px) {

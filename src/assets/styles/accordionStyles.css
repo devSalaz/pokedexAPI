@@ -21,6 +21,8 @@
 .accordion-image {
   width: 48%;
   filter: drop-shadow(0 0 0.15rem #4a00e0);
+  position: relative;
+  z-index: -1;
 }
 
 .accordion-div {

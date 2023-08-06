@@ -307,10 +307,12 @@ const Homepage = () => {
       digglet.scale.y = bounds.width / 0.85;
       digglet.scale.z = bounds.width / 0.85;
 
-      digglet.position.x = bounds.left - sizes.width / 1.95 + bounds.width / 2;
-      digglet.position.z = -boxMesh.scale.z / 2;
-
-      digglet.position.y = 0;
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+        digglet.position.x = sizes.width / 2 - digglet.scale.x / 2;
+      } else {
+        digglet.position.x = sizes.width / 2 - digglet.scale.x * 0.75;
+      }
 
       let targetD = new THREE.Vector3();
       targetD.x = 0;
@@ -497,7 +499,7 @@ const Homepage = () => {
         gengarCube.position.y = lerp(
           gengarCube.position.y,
           genggarLerpedY,
-          0.1
+          0.095
         );
         gengar.position.y = gengarCube.position.y;
         gengar.lookAt(new THREE.Vector3(0, 0, 600));
@@ -516,7 +518,8 @@ const Homepage = () => {
           0.0 - boundsDigglet.top + sizes.height / 2 - boundsDigglet.height / 2;
 
         digglet.position.y = lerp(digglet.position.y, diggletLerpedY, 0.05);
-
+        // digglet.position.x =
+        //   boundsDigglet.left - sizes.width / 1.95 + boundsDigglet.width / 2;
         let boundsWeepinbell = WeepinbellReference.getBoundingClientRect();
 
         let weepinLerpedY =
@@ -528,7 +531,7 @@ const Homepage = () => {
         weepinbell.position.y = lerp(
           weepinbell.position.y,
           weepinLerpedY,
-          0.05
+          0.04
         );
 
         let boundsKoffing = KoofinReference.getBoundingClientRect();
@@ -538,7 +541,7 @@ const Homepage = () => {
 
         koffing.position.y = lerp(koffing.position.y, koffingLerpedY, 0.08);
 
-        boxMesh.position.y = lerp(boxMesh.position.y, koffingLerpedY, 0.05);
+        boxMesh.position.y = lerp(boxMesh.position.y, koffingLerpedY, 0.08);
       }
     }
 
@@ -726,8 +729,14 @@ const Homepage = () => {
       digglet.scale.y = diggletBounds.width / 0.85;
       digglet.scale.z = diggletBounds.width / 0.85;
 
-      digglet.position.x =
-        diggletBounds.left - sizes.width / 1.95 + diggletBounds.width / 2;
+      // digglet.position.x =
+      //   diggletBounds.left - sizes.width / 1.95 + diggletBounds.width / 2;
+      // if (windowWidth <= 768) {
+      //   digglet.position.x = sizes.width / 2 - digglet.scale.x / 2;
+      // } else {
+      //   digglet.position.x = sizes.width / 2 - digglet.scale.x * 0.75;
+      // }
+
       //digglet.position.z = -digglet.scale.z / 2;
       digglet.position.y =
         0.0 - diggletBounds.top + sizes.height / 2 - diggletBounds.height / 2;
@@ -796,6 +805,7 @@ const Homepage = () => {
     renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       alpha: true,
+      preserveDrawingBuffer: true,
     });
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.setSize(sizes.width, sizes.height);

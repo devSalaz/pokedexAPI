@@ -54,7 +54,7 @@ export const dataAccordion = [
         <h3>
           All the project will be upload in this Github{" "}
           <span>
-            <a href="" target="_blank">
+            <a href="https://github.com/devSalaz/pokedexAPI" target="_blank">
               repository
             </a>
           </span>{" "}
